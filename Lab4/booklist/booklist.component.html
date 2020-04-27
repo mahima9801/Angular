@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Book ID</th><th>Book Title</th><th>Book Author</th><th>Book Year of Publish</th>
+                </tr>
+                <tr *ngFor="let book of books"><td>{{book.id}}</td><td>{{book.title}}</td><td>{{book.author}}</td><td>{{book.year}}</td>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

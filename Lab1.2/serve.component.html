@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <table>
+            <tr>
+                <td><label for="id">ID:</label></td>
+                    <input type="text" name="id" #id/>
+            </tr>
+            <tr>  
+                <td><label for="name">Name:</label></td>
+                    <input type="text" name="name" #name/>
+            </tr>
+            <tr>
+                <td><label for="salary">Salary:</label></td>
+                    <input type="text" name="salary" #salary/>
+            </tr>
+            <tr>
+                <td><label for="depart">Department:</label></td>
+                    <input type="text" name="depart" #depart/>
+            </tr>
+            <tr>
+                <td><button type="button" (click)="save(id, name, salary, depart)">Add Employee</button>
+            </tr>
+        </table>
+        <p>{{id.value}} {{name.value}} {{salary.value}} {{depart.value}}</p>
+        <div class="alert alert-warning" role="alert"></div>
+    </div>
+</div>
+
+
+

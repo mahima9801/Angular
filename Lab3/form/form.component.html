@@ -1,0 +1,53 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+          <h1 class ="bg-primary text-center"> Product Details form</h1>
+          <P class="bg-warning text-primary" >   {{Form.value | json}} </P>
+          <hr>
+          <form #Form="ngForm" (ngSubmit)="saveData(Form)" novalidate>
+            <div class="form-group">
+              <label for="pid">Product ID</label><br>
+              <input type="text" class="form-control" 
+              name="pid" [(ngModel)]="fform.productid" />
+            </div>
+            <div class="form-group">
+               <label for="pname">Product Name</label><br>
+               <input type="text" [class.is-invalid]="pname.invalid" 
+               class="form-control is-invalid" 
+               required="required" minlength="10" 
+               name="pname" #pname="ngModel" 
+               [(ngModel)]="fform.productnam"/>
+               <span [class.d-none]="pname.valid">Product Name is Mandatory</span>
+            </div>
+            <div class="form-group">
+                <label for="pcost">Product Cost</label><br>
+               <input type="radio" id="pn" name="pn" value="pn">
+               <label for="yes">Yes</label>
+               <input type="radio" id="pn" name="pn" value="pn">
+               <label for="no">No</label>
+               </div>
+            <div class="form-group">
+               <label for="pcategory">Product Cateogry</label><br>
+               <select name="Prod_cateogry" class="form-control">
+                 <option *ngFor="let c of category">{{c}}</option>
+               </select>
+            </div>
+               <div class="form-group">
+                  <p>Available in Stores</p>
+                  <input type="checkbox" id="bigbazaar" name="bigbazaar" value="bigbazaar">
+                  <label for="bigbazaar"> Big Bazar </label>
+                  <input type="checkbox" id="dmart" name="dmart" value="dmart">
+                  <label for="dmart">Dmart</label>
+                  <input type="checkbox" id="reliance" name="reliance" value="reliance">
+                  <label for="reliance">Reliance</label>
+                  <input type="checkbox" id="megastore" name="megastore" value="megastore">
+                  <label for="megastore">Megastore</label>
+               </div>
+               <button tye="submit" class="btn btn-primary">Add Product</button>
+          </form>
+          <br><br><br>
+          </div>
+    </div>
+</div>
+  
